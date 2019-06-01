@@ -3,10 +3,10 @@ FROM debian
 ADD debian.list /etc/apt/sources.list.d/
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt -y install nginx && \
+    apt -y install nginx && \ # ust veb serv
     apt-get clean && \
     rm -rf /var/www/* && \ 
-    mkdir -p /var/www/yelp.com/img && \
+    mkdir -p /var/www/yelp.com/img && \ #sozd papki image
     chmod -R 754 /var/www/yelp.com/ && \
     useradd admin && \
     usermod -aG admin admin && \
